@@ -38,8 +38,10 @@ export function SiteNav() {
               <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:text-foreground data-[state=open]:text-foreground">
                 Разделы
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[420px] gap-1 p-2">
+              {/* Anchored to the trigger's right edge so the panel never
+                  runs past the viewport on narrow desktops. */}
+              <NavigationMenuContent className="md:left-auto md:right-0">
+                <ul className="grid w-[380px] gap-1 p-2">
                   {NAV.map((item) => (
                     <li key={item.href}>
                       <NavigationMenuLink asChild>
